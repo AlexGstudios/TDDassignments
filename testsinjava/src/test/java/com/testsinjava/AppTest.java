@@ -37,4 +37,14 @@ class AppTest {
     void get_color(){
         assertEquals("Silver", car.getColor());
     }
+
+    @Test
+    void get_engine(){
+        assertEquals("v8", car.getEngine());
+    }
+
+    @Test
+    void get_number_plate(){
+        assertEquals(car.getNumberPlate(), car.getNumberPlate());
+    }
 }

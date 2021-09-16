@@ -2,10 +2,8 @@ package com.testsinjava;
 
 public class Audi extends Car{
 
-    String color;
-
-    Audi(String color){
-        super(Brand.Audi, color);
+    Audi(String color, String engine, String numberPlate){
+        super(Brand.Audi, color, engine, numberPlate);
         construct();
     }
     

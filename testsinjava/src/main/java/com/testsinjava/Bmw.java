@@ -2,10 +2,8 @@ package com.testsinjava;
 
 public class Bmw extends Car{
 
-    String color;
-
-    Bmw(String color){
-        super(Brand.Bmw, color);
+    Bmw(String color, String engine, String numberPlate){
+        super(Brand.Bmw, color, engine, numberPlate);
         construct();
     }
     

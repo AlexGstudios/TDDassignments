@@ -2,10 +2,8 @@ package com.testsinjava;
 
 public class Lada extends Car{
 
-    String color;
-
-    Lada(String color){
-        super(Brand.Lada, color);
+    Lada(String color, String engine, String numberPlate){
+        super(Brand.Lada, color, engine, numberPlate);
         construct();
     }
     
