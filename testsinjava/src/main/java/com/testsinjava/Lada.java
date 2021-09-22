@@ -3,7 +3,7 @@ package com.testsinjava;
 public class Lada extends Car{
 
     Lada(String color, String engine, String numberPlate){
-        super(Brand.Lada, color, engine, numberPlate);
+        super(color, engine, numberPlate);
         construct();
     }
     

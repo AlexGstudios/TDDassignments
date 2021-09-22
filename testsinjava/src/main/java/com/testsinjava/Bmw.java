@@ -3,7 +3,7 @@ package com.testsinjava;
 public class Bmw extends Car{
 
     Bmw(String color, String engine, String numberPlate){
-        super(Brand.Bmw, color, engine, numberPlate);
+        super(color, engine, numberPlate);
         construct();
     }
     

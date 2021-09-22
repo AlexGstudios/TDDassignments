@@ -3,7 +3,7 @@ package com.testsinjava;
 public class Audi extends Car{
 
     Audi(String color, String engine, String numberPlate){
-        super(Brand.Audi, color, engine, numberPlate);
+        super(color, engine, numberPlate);
         construct();
     }
     

@@ -1,6 +1,6 @@
 package com.testsinjava;
 
-public class CarFactory {   
+public class CarFactory {
 
     public String createNumberPlate(){
 
@@ -21,19 +21,20 @@ public class CarFactory {
         return stringBuilder.toString();
     }
 
+    private String[] brands = {"Audi", "Bmw", "Lada"};
     private String[] engine = {"4-takt", "v6", "v8"};
 
-    public Car createCar(Brand brand, String color){
+    public Car createCar(String color){
         Car car = null;
 
-        switch(brand){
-            case Audi:
+        switch(brands[0]){
+            case "Audi":
                 car = new Audi(color, engine[1], createNumberPlate());
                 break;
-            case Bmw:
+            case "Bmw":
                 car = new Bmw(color, engine[2], createNumberPlate());
                 break;
-            case Lada:
+            case "Lada":
                 car = new Lada(color, engine[0], createNumberPlate());
                 break;
             default:

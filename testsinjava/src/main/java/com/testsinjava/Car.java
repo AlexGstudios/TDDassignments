@@ -2,8 +2,7 @@ package com.testsinjava;
 
 public abstract class Car {
 
-    public Car(Brand brand, String color, String engine, String numberPlate){
-        this.brand = brand;
+    public Car(String color, String engine, String numberPlate){
         this.color = color;
         this.engine = engine;
         this.numberPlate = numberPlate;

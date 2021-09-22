@@ -13,24 +13,13 @@ class AppTest {
 
     @BeforeEach
     public void create_car(){
-        car = carFactory.createCar(Brand.Bmw, "Silver");
-    }
-
-    @Test
-    void create_car_bmw(){
-        assertTrue(car instanceof Bmw);
+        car = carFactory.createCar("Silver");
     }
 
     @Test
     void create_car_audi() {
-        car = carFactory.createCar(Brand.Audi, "Green");
+        car = carFactory.createCar("Green");
         assertTrue(car instanceof Audi);
-    }
-
-    @Test
-    void create_car_lada(){
-        car = carFactory.createCar(Brand.Lada, "Blue");
-        assertTrue(car instanceof Lada);
     }
 
     @Test
@@ -40,7 +29,7 @@ class AppTest {
 
     @Test
     void get_engine(){
-        assertEquals("v8", car.getEngine());
+        assertEquals("v6", car.getEngine());
     }
 
     @Test
