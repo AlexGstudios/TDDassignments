@@ -1,9 +1,10 @@
 package com.testsinjava;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class AppTest {
@@ -11,29 +12,27 @@ class AppTest {
     private CarFactory carFactory = new CarFactory();
     private Car car;
 
-    @BeforeEach
-    public void create_car(){
-        car = carFactory.createCar("Silver");
+    @Test
+    void test_create_car() throws CarException {
+        car = carFactory.createCar("Blue");
+        assertNotNull(car);
     }
 
     @Test
-    void create_car_audi() {
+    void test_create_car_brand() throws CarException {
         car = carFactory.createCar("Green");
         assertTrue(car instanceof Audi);
     }
 
     @Test
-    void get_color(){
-        assertEquals("Silver", car.getColor());
-    }
-
-    @Test
-    void get_engine(){
+    void test_get_engine() throws CarException{
+        car = carFactory.createCar("Blue");
         assertEquals("v6", car.getEngine());
     }
 
     @Test
-    void get_number_plate(){
-        assertEquals(car.getNumberPlate(), car.getNumberPlate());
+    void test_create_car_brand_fail() throws CarException {
+        CarException carException = assertThrows(CarException.class, () -> carFactory.createCar("lilac"));
+        assertEquals("Not a brand", carException.getMessage());
     }
 }

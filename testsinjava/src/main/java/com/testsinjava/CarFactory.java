@@ -24,7 +24,7 @@ public class CarFactory {
     private String[] brands = {"Audi", "Bmw", "Lada"};
     private String[] engine = {"4-takt", "v6", "v8"};
 
-    public Car createCar(String color){
+    public Car createCar(String color) throws CarException {
         Car car = null;
 
         switch(brands[0]){
@@ -38,8 +38,7 @@ public class CarFactory {
                 car = new Lada(color, engine[0], createNumberPlate());
                 break;
             default:
-                //will throw exception
-                break;
+                throw new CarException("Not a brand");
         }
         return car;
     }
